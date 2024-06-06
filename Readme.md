@@ -494,6 +494,7 @@ El código del Receptor se encarga de recibir los datos enviados por LoRa, desci
 # 6. Configuración del Servidor PHP
 El servidor PHP recibe los datos del receptor por el método POST, los descifra con la clave que ambas ESP32 tienen y envía los datos a la base de PosgreSQL que se encuentra en el propio servidor.
         Código PHP del Servidor:
+
                                         <?php
                                         
                                         $host = 'localhost';
