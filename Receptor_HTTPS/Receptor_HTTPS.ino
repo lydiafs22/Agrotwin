@@ -19,6 +19,9 @@ IPAddress ip(192, 168, 87, 25);
 IPAddress gateway(192, 168, 87, 1);
 IPAddress subnet(255, 255, 255, 0);
 
+// Declare serverIP as a global variable
+IPAddress serverIP;
+
 // Variables NTP para configurar y sincronizar la hora 
 const char* ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 3600;
@@ -202,7 +205,7 @@ void setup() {
     Serial.println("\nConectando con el servidor...");
     // Intenta la conexión sin verificar el certificado
     sslClient.setInsecure();
-    IPAddress serverIP = resolveHostname(server);
+    serverIP = resolveHostname(server);
     if (serverIP == IPAddress(0, 0, 0, 0)) {
         Serial.println("Error al resolver el dominio");
         return;
@@ -238,7 +241,7 @@ void loop() {
     }
 }
 
-void envioweb(double t1, double h1, int w1) { // Función para el envío
+void envioweb(double t1, double h1, int w1) { // Función para el envío por HTTP a la BBDD
     // Se conecta al servidor después de haberlo resuelto por el puerto 443.
     if (sslClient.connect(serverIP, 443)) {
         Serial.println("Conexión a la base de datos.");
