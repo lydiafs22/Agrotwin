@@ -24,20 +24,20 @@ La implementación de la comunicación LoRa en este proyecto permite que los dat
 # 2. Descripción del Proyecto
 Este proyecto se divide en tres componentes principales:
 
-    - Emisor: Recoge datos de temperatura, humedad del aire y humedad del suelo, los muestra en una pantalla OLED y los envía cifrados con XOR a través de LoRa.
-    - Receptor: Recibe los datos enviados por el emisor, los descifra, los muestra en una pantalla OLED y los envía a un servidor PHP cifrados con XOR y por HTTPS.
-    - Servidor PHP: Recibe los datos del receptor, los descifra y los almacena en una base de datos PostgreSQL.
+-   Emisor: Recoge datos de temperatura, humedad del aire y humedad del suelo, los muestra en una pantalla OLED y los envía cifrados con XOR a través de LoRa.
+-   Receptor: Recibe los datos enviados por el emisor, los descifra, los muestra en una pantalla OLED y los envía a un servidor PHP cifrados con XOR y por HTTPS.
+-   Servidor PHP: Recibe los datos del receptor, los descifra y los almacena en una base de datos PostgreSQL.
 
 # 3. Componentes y Herramientas Utilizadas
 Hardware:
-    - Sensores de temperatura y humedad DHT11
-    - Sensor de humedad del suelo
-    - Módulos LoRa
-    - Pantalla OLED (Adafruit SSD1306)
-    - Microcontroladores compatibles con Arduino (por ejemplo, ESP32)
+-   Sensores de temperatura y humedad DHT11
+-   Sensor de humedad del suelo
+-   Módulos LoRa
+-   Pantalla OLED (Adafruit SSD1306)
+-   Microcontroladores compatibles con Arduino (por ejemplo, ESP32)
 
 Software:
-    - Arduino IDE
+-   Arduino IDE
 
 Librerías:
    - SPI.h: Proporciona soporte para la comunicación SPI (Serial Peripheral Interface).
